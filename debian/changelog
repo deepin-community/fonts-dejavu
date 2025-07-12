@@ -1,4 +1,4 @@
-fonts-dejavu (2.37-8) unstable; urgency=medium
+fonts-dejavu (2.37-deepin8) unstable; urgency=medium
 
   * Team upload
   * Let fonts-dejavu-core depend on fonts-dejavu-mono
