@@ -1,19 +1,21 @@
 Source: fonts-dejavu
 Section: fonts
 Priority: optional
-Maintainer: Deepin Developer <deepin-dev@deepin.org>
+Maintainer: Debian Fonts Task Force <debian-fonts@lists.debian.org>
 Build-Depends:
  debhelper-compat (= 13)
 Build-Depends-Indep:
  fontforge-nox | fontforge,
- libfont-ttf-perl (>= 0.35),
- perl
+ libfont-ttf-perl,
+ perl,
+ woff-tools,
+ woff2
 Standards-Version: 4.5.0
-Uploaders: Deepin Packages Builder <packages@deepin.org>
+Uploaders:
  Davide Viti <zinosat@tiscali.it>,
  Fabian Greffrath <fabian@debian.org>
-#Vcs-Git
-#Vcs-Browser
+Vcs-Git: https://salsa.debian.org/fonts-team/fonts-dejavu.git
+Vcs-Browser: https://salsa.debian.org/fonts-team/fonts-dejavu
 Homepage: https://dejavu-fonts.github.io/
 Rules-Requires-Root: no
 
@@ -22,11 +24,12 @@ Architecture: all
 Multi-Arch: foreign
 Depends:
  fonts-dejavu-core,
+ fonts-dejavu-mono,
  fonts-dejavu-extra,
  ${misc:Depends}
 Pre-Depends:
  ${misc:Pre-Depends}
-Description: metapackage to pull in fonts-dejavu-core and fonts-dejavu-extra
+Description: metapackage to pull in fonts-dejavu-core, -mono and -extra
  DejaVu provides an expanded version of the Vera font family aiming for
  quality and broader Unicode coverage while retaining the original Vera
  style. DejaVu currently works towards conformance with the Multilingual
@@ -42,6 +45,7 @@ Package: fonts-dejavu-core
 Architecture: all
 Multi-Arch: foreign
 Depends:
+ fonts-dejavu-mono,
  ${misc:Depends}
 Pre-Depends:
  ${misc:Pre-Depends}
@@ -52,9 +56,35 @@ Description: Vera font family derivate with additional characters
  European Standards (MES-1 and MES-2) for Unicode coverage. The DejaVu
  fonts provide serif, sans and monospaced variants.
  .
- This package only contains the sans, sans-bold, serif, serif-bold,
- mono and mono-bold variants. For additional variants, see the
- fonts-dejavu-extra package.
+ This package only contains the sans, sans-bold, serif and serif-bold
+ variants. For additional variants, see the fonts-dejavu-mono and
+ fonts-dejavu-extra packages.
+ .
+ DejaVu fonts are intended for use on low-resolution devices (mainly
+ computer screens) but can be used in printing as well.
+
+Package: fonts-dejavu-mono
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends}
+Pre-Depends:
+ ${misc:Pre-Depends}
+Replaces:
+ fonts-dejavu-core (<< 2.37-7~),
+ fonts-dejavu-extra (<< 2.37-7~),
+Breaks:
+ fonts-dejavu-core (<< 2.37-7~),
+ fonts-dejavu-extra (<< 2.37-7~),
+Description: Vera font family derivate with additional characters
+ DejaVu provides an expanded version of the Vera font family aiming for
+ quality and broader Unicode coverage while retaining the original Vera
+ style. DejaVu currently works towards conformance with the Multilingual
+ European Standards (MES-1 and MES-2) for Unicode coverage. The DejaVu
+ fonts provide serif, sans and monospaced variants.
+ .
+ This package only contains the monospaced variants. For additional
+ variants, see the fonts-dejavu-core and fonts-dejavu-extra packages.
  .
  DejaVu fonts are intended for use on low-resolution devices (mainly
  computer screens) but can be used in printing as well.
@@ -103,3 +133,23 @@ Description: Monospace Vera font family derivate with additional characters
  .
  DejaVu fonts are intended for use on low-resolution devices (mainly
  computer screens) but can be used in printing as well.
+
+Package: fonts-dejavu-web
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ fonts-dejavu,
+ ${misc:Depends}
+Pre-Depends:
+ ${misc:Pre-Depends}
+Recommends:
+ javascript-common,
+Description: Vera font family derivate with additional characters (woff/woff2)
+ DejaVu provides an expanded version of the Vera font family aiming for
+ quality and broader Unicode coverage while retaining the original Vera
+ style. DejaVu currently works towards conformance with the Multilingual
+ European Standards (MES-1 and MES-2) for Unicode coverage. The DejaVu
+ fonts provide serif, sans and monospaced variants.
+ .
+ This package includes the woff/woff2 formats to be used as webfonts on a
+ webserver.
