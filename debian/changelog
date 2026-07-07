@@ -1,3 +1,9 @@
+fonts-dejavu (2.37-deepin2) unstable; urgency=medium
+
+  * Build-Depends on sfnt2woff-zopfli instead of woff-tools
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Tue, 07 Jul 2026 15:04:32 +0800
+
 fonts-dejavu (2.37-deepin1) unstable; urgency=medium
 
   * From upstream 2.37-8
