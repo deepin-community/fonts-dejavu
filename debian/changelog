@@ -1,8 +1,11 @@
-fonts-dejavu (2.37-deepin1) unstable; urgency=medium
+fonts-dejavu (2.37-9) unstable; urgency=medium
 
-  * From upstream 2.37-8
+  * Team upload.
+  * Build-Depends on sfnt2woff-zopfli instead of woff-tools
+  * Introduce debian/salsa-ci.yml
+  * Update d/watch to version 5 format
 
- -- lichenggang <lichenggang@deepin.org>  Tue, 10 Mar 2026 14:12:07 +0800
+ -- Agathe Porte <gagath@debian.org>  Wed, 06 May 2026 16:26:41 +0200
 
 fonts-dejavu (2.37-8) unstable; urgency=medium
 

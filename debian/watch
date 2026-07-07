@@ -1,2 +1,4 @@
-version=3
-http://sf.net/dejavu/dejavu-fonts-([\d.]*).tar.bz2
+Version: 5
+
+Source: https://sf.net/dejavu/
+Matching-Pattern: dejavu-fonts-@ANY_VERSION@@ARCHIVE_EXT@
