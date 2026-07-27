@@ -71,11 +71,11 @@ Depends:
 Pre-Depends:
  ${misc:Pre-Depends}
 Replaces:
- fonts-dejavu-core (<< 2.37-7~),
- fonts-dejavu-extra (<< 2.37-7~),
+ fonts-dejavu-core (<< 2.37-deepin3~),
+ fonts-dejavu-extra (<< 2.37-deepin3~),
 Breaks:
- fonts-dejavu-core (<< 2.37-7~),
- fonts-dejavu-extra (<< 2.37-7~),
+ fonts-dejavu-core (<< 2.37-deepin3~),
+ fonts-dejavu-extra (<< 2.37-deepin3~),
 Description: Vera font family derivate with additional characters
  DejaVu provides an expanded version of the Vera font family aiming for
  quality and broader Unicode coverage while retaining the original Vera
